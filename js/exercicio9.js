@@ -1,26 +1,87 @@
+// Conferi se o CPF tem exatamente 11 digitos
 function haOnzeDigitos(cpf) {
-    //---- edite aqui para a validação do exercício 9a
-    return false
+    return cpf.length == 11;
 }
 
+// Conferi se todos os digitos são números
 function todosOsOnzeDigitosSaoNumeros(cpf) {
-    //---- edite aqui para a validação do exercício 9b
-    return false
+    listaNumeros = [];
+    for (let i = 0; i <= 10; i++){
+        listaNumeros.push(cpf[i]);
+    }
+
+    let ehNumero = true;
+    for (var n of listaNumeros) {
+        let nInt = parseInt(n)
+        if (isNaN(nInt)){
+            ehNumero = false;
+            break;
+        }
+    }
+    return ehNumero
 }
 
+// Conferi se todos os digitos não são iguais
 function osOnzeNumerosSaoDiferentes(cpf) {
-    //---- edite aqui para a validação do exercício 9c
-    return false
+    let ehIgual = true;
+    for (let i = 1; i<=10; i++){
+        if (cpf[i] != cpf[0]){
+            ehIgual = false;
+        }
+    }
+    return !ehIgual
 }
 
+// Conferi se o primeiro digito de verificação é válido
 function oPrimeiroDigitoVerificadorEhValido(cpf) {
-    //---- edite aqui para a validação do exercício 9d
-    return false
+    let listaNumeros = [];
+
+    for (let i = 8; i >=0; i--){
+        listaNumeros.push(cpf[i])
+    }
+
+    let soma = 0
+
+    for (let i = 10; i >= 2; i--){
+        soma = soma + (i * listaNumeros[i-2]);
+        console.log(listaNumeros[i-2]+" "+i)
+        console.log(soma+" "+i)
+    }
+
+    soma = soma * 10;
+    soma = soma % 11;
+
+    if (soma == 10){
+        soma = 0
+    }
+
+    return soma == parseInt(cpf[9]);
 }
 
+// Conferi se o segundo digito de verificação é válido
 function oSegundoDigitoVerificadorEhValido(cpf) {
-    //---- edite aqui para a validação do exercício 9e
-    return false
+    let listaNumeros = [];
+
+    for (let i = 9; i >=0; i--){
+        listaNumeros.push(cpf[i])
+    }
+
+    let soma = 0
+
+    for (let i = 11; i >= 2; i--){
+        soma = soma + (i * listaNumeros[i-2]);
+        console.log(listaNumeros[i-2]+" "+i)
+        console.log(soma+" "+i)
+    }
+
+    soma = soma * 10;
+    soma = soma % 11;
+    
+    if (soma == 10){
+        soma = 0
+    }
+
+    return soma == parseInt(cpf[10]);
 }
 
 

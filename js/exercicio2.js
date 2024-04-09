@@ -3,5 +3,14 @@ function tratadorDeCliqueExercicio2() {
     // exibir um alerta com a hora 
     // atual no seguinte formato:
     // Horário: 8 PM : 40m : 28s
-    console.log('adicionar código na função tratadorDeCliqueExercicio2() em ./js/exercicio2.js')
+
+    var date = new Date();
+
+    var hora = date.getHours().toString()+"h";
+    var min = date.getMinutes().toString()+"m";
+    var sec = date.getSeconds().toString()+"s";
+
+    window.alert(hora + " : " + min + " : " + sec)
+
+    console.log(hora + " : " + min + " : " + sec);
 }

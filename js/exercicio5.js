@@ -1,7 +1,10 @@
 function convertCelciusToFahrenheit(celcius) {
 	//edite esta função
 	//note que você já está recebendo o valor em celcius como parâmetro desta função
-	return "Adicione aqui o resultado da conversão"
+	//(C x 1.8) + 32 = F
+
+	var fahrenheit = celcius*1.8 + 32;
+	return fahrenheit
 }
 
 

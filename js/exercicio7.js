@@ -1,7 +1,14 @@
 function listarCasos() {
     let todosOsCasos = []
     //--- inclua seu algoritmo aqui ---
-
+    for (let i = 33; i<100; i++) {
+        var n = i**2;
+        segundaParteN = n%100
+        primeiraParteN = (n-segundaParteN)/100
+        if ((primeiraParteN + segundaParteN) == i){
+            todosOsCasos.push(i)
+        }
+    }
     
 
     //--- ---
